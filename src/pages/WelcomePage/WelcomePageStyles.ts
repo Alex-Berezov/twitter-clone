@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export const useSineInStyles = makeStyles((theme) => ({
+export const useWelcomePageStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         paddingLeft: 0,
@@ -32,6 +32,7 @@ export const useSineInStyles = makeStyles((theme) => ({
         padding: theme.spacing(4),
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
     },
     smallBlueLogo: {
         fontSize: '3rem',
@@ -66,16 +67,5 @@ export const useSineInStyles = makeStyles((theme) => ({
         width: '50%',
         minHeight: '52px',
         marginBottom: '20px',
-    },
-    modal: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    paper: {
-        backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
-    },
+    }
 }));

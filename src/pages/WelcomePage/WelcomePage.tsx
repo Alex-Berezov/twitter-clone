@@ -5,17 +5,17 @@ import { Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
 
 import SmallBlueLogo from '@material-ui/icons/Twitter';
 import loginImg from '../../assets/images/lohp_1302x955.png';
 
-import { useSineInStyles } from './SignInStyles';
+import SignUpModalForm from './SignUpModalForm/SignUpModalForm';
+import SignInModalForm from './SignInModalForm/SignInModalForm';
+import { useWelcomePageStyles } from './WelcomePageStyles';
+import StickyFooter from '../../components/Footer/Footer';
 
-const SignIn = () => {
-    const classes = useSineInStyles();
+export const WelcomePage: React.FC = (): React.ReactElement => {
+    const classes = useWelcomePageStyles();
 
     const [isSignInForm, setIsSignInForm] = React.useState(false);
     const toggleSignInForm = () => {
@@ -73,25 +73,10 @@ const SignIn = () => {
                                         Sign up
                                     </Link>
                                 </Typography>
-                                <Modal
-                                    aria-labelledby="transition-modal-title"
-                                    aria-describedby="transition-modal-description"
-                                    className={classes.modal}
-                                    open={signInModalOpen}
-                                    onClose={toggleOpenSignInModal}
-                                    closeAfterTransition
-                                    BackdropComponent={Backdrop}
-                                    BackdropProps={{
-                                    timeout: 500,
-                                    }}
-                                >
-                                    <Fade in={signInModalOpen}>
-                                    <div className={classes.paper}>
-                                        <h2 id="transition-modal-title">Sign In modal</h2>
-                                        <p id="transition-modal-description">react-transition-group animates me.</p>
-                                    </div>
-                                    </Fade>
-                                </Modal>
+                                <SignInModalForm
+                                    signInModalOpen={signInModalOpen}
+                                    toggleOpenSignInModal={toggleOpenSignInModal}
+                                />
                             </Box>
                             : <Box className={classes.signUpForm}>
                                 <Typography variant="h3" className={classes.formTitle}>
@@ -146,31 +131,17 @@ const SignIn = () => {
                                         Sign in
                                     </Link>
                                 </Typography>
-                                <Modal
-                                    aria-labelledby="transition-modal-title"
-                                    aria-describedby="transition-modal-description"
-                                    className={classes.modal}
-                                    open={signUpModalOpen}
-                                    onClose={toggleOpenSignUpModal}
-                                    closeAfterTransition
-                                    BackdropComponent={Backdrop}
-                                    BackdropProps={{
-                                    timeout: 500,
-                                    }}
-                                >
-                                    <Fade in={signUpModalOpen}>
-                                    <div className={classes.paper}>
-                                        <h2 id="transition-modal-title">Sign up modal</h2>
-                                        <p id="transition-modal-description">react-transition-group animates me.</p>
-                                    </div>
-                                    </Fade>
-                                </Modal>
+                                <SignUpModalForm
+                                    signUpModalOpen={signUpModalOpen}
+                                    toggleOpenSignUpModal={toggleOpenSignUpModal}
+                                />
                             </Box>
                     }
                 </Grid>
             </Grid>
+            <footer>
+                <StickyFooter />
+            </footer>
         </Container>
     );
 };
-
-export default SignIn;
