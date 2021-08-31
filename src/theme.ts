@@ -17,11 +17,19 @@ export const theme = createTheme ({
   },
   palette: {
     primary: {
-      main: 'rgba(29,161,242,1.00)',
+      main: 'rgba(29,161,242)',
+      dark: 'rgba(26,145,218)',
+      contrastText: '#fff',
     },
     secondary: {
-      main: '#000',
+      main: 'rgba(26,145,218)',
     },
+    error: {
+      main: '#ff0000',
+    },
+    background: {
+      default: '#fff',
+    }
   },
   spacing: [0, 4, 8, 16, 32, 64],
 })

@@ -2,7 +2,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const useLeftSidebarStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
+        '& nav': {
+            paddingTop: '0px',
+        },
     },
     smallBlueLogo: {
         fontSize: '2rem',
@@ -21,6 +23,16 @@ export const useLeftSidebarStyles = makeStyles((theme) => ({
             fontSize: '22px',
             fontWeight: 400,
             color: 'rgb(15, 20, 25)',
+        }
+    },
+    activeNavItem: {
+        '& svg': {
+            width: '1.95rem',
+            height: '1.95rem',
+            color: theme.palette.primary.main,
+        },
+        '& span': {
+            fontWeight: 700,
         }
     },
     tweetBtn: {

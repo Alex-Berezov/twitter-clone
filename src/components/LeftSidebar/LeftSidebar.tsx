@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -24,64 +24,66 @@ const LeftSidebar = () => {
 
     return (
         <div className={classes.root}>
-            <SmallBlueLogo className={classes.smallBlueLogo} color="primary" />
             <List component="nav">
-                <Link to="/" className={classes.listItem}>
+                <NavLink exact to="/">
+                    <SmallBlueLogo className={classes.smallBlueLogo} color="primary" />
+                </NavLink>
+                <NavLink exact to="/" className={classes.listItem} activeClassName={classes.activeNavItem}>
                     <ListItem button>
                         <ListItemIcon>
                             <HomeOutlinedIcon />
                         </ListItemIcon>
                         <ListItemText className={classes.listItemText} primary="Home" />
                     </ListItem>
-                </Link>
-                <Link to="/explore" className={classes.listItem}>
+                </NavLink>
+                <NavLink to="/explore" className={classes.listItem} activeClassName={classes.activeNavItem}>
                     <ListItem button>
                         <ListItemIcon>
                             <SearchOutlinedIcon />
                         </ListItemIcon>
                         <ListItemText className={classes.listItemText} primary="Explore" />
                     </ListItem>
-                </Link>
-                <Link to="/notifications" className={classes.listItem}>
+                </NavLink>
+                <NavLink to="/notifications" className={classes.listItem} activeClassName={classes.activeNavItem}>
                     <ListItem button>
                         <ListItemIcon>
                             <NotificationsNoneOutlinedIcon />
                         </ListItemIcon>
                         <ListItemText className={classes.listItemText} primary="Notifications" />
                     </ListItem>
-                </Link>
-                <Link to="/messages" className={classes.listItem}>
+                </NavLink>
+                <NavLink to="/messages" className={classes.listItem} activeClassName={classes.activeNavItem}>
                     <ListItem button>
                         <ListItemIcon>
                             <MailOutlineIcon />
                         </ListItemIcon>
                         <ListItemText className={classes.listItemText} primary="Messages" />
                     </ListItem>
-                </Link>
-                <Link to="/bookmarks" className={classes.listItem}>
+                </NavLink>
+                <NavLink to="/bookmarks" className={classes.listItem} activeClassName={classes.activeNavItem}>
                     <ListItem button>
                         <ListItemIcon>
                             <BookmarkBorderOutlinedIcon />
                         </ListItemIcon>
                         <ListItemText className={classes.listItemText} primary="Bookmarks" />
                     </ListItem>
-                </Link>
-                <Link to="/lists" className={classes.listItem}>
+                </NavLink>
+                <NavLink to="/lists" className={classes.listItem} activeClassName={classes.activeNavItem}>
                     <ListItem button>
                         <ListItemIcon>
                             <ListAltOutlinedIcon />
                         </ListItemIcon>
                         <ListItemText className={classes.listItemText} primary="Lists" />
                     </ListItem>
-                </Link>
-                <Link to="/profile" className={classes.listItem}>
+                </NavLink>
+                <NavLink to="/profile" className={classes.listItem} activeClassName={classes.activeNavItem}>
                     <ListItem button>
                         <ListItemIcon>
                             <PersonOutlineOutlinedIcon />
                         </ListItemIcon>
                         <ListItemText className={classes.listItemText} primary="Profile" />
                     </ListItem>
-                </Link>
+                </NavLink>
                 <ListItem className={classes.listItem} button disabled>
                     <ListItemIcon>
                         <MoreHorizIcon />

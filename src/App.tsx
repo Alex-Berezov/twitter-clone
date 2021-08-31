@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
 import LeftSidebar from './components/LeftSidebar/LeftSidebar';
+import RightSidebar from './components/RightSidebar/RightSidebar';
 import { WelcomePage } from './pages/WelcomePage/WelcomePage';
 import { Home } from './pages/Home/Home';
 import { Explore } from './pages/Explore/Explore';
@@ -17,6 +18,9 @@ import { Profile } from './pages/Profile/Profile';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    container: {
+      height: '100vh',
+    },
     contentPart: {
       border: '1px solid rgb(230 233 234)',
     },
@@ -32,7 +36,7 @@ function App() {
       <main>
         {
           isAuthorized
-            ? <Container maxWidth="lg">
+            ? <Container className={classes.container} maxWidth="lg">
                 <Grid container spacing={1}>
                   <Grid item component="header" xs={3}>
                     <LeftSidebar />
@@ -47,7 +51,7 @@ function App() {
                     <Route exact path="/profile" component={Profile} />
                   </Grid>
                   <Grid item xs={3}>
-                    Right side bar
+                    <RightSidebar />
                   </Grid>
                 </Grid>
               </Container>
