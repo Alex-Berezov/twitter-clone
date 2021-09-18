@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Avatar, Paper, TextareaAutosize } from '@material-ui/core';
+import { Paper, TextareaAutosize } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
 import PublicIcon from '@material-ui/icons/Public';
 
 import TweetSmallBtn from '../../../components/Ui/TweetSmallBtn/TweetSmallBtn';
+import BasicAvatar from './../../../components/Ui/BasicAvatar/BasicAvatar';
 import { createTweetFormStyles } from './createTweetFormStyles';
 
 const CreateTweetForm = () => {
@@ -15,7 +16,7 @@ const CreateTweetForm = () => {
     return (
         <div className={classes.root}>
             <Paper component="form" className={classes.form}>
-                <Avatar alt="User Name" src="/static/images/avatar/1.jpg" className={classes.avatar} />
+                <BasicAvatar />
                 <div className={classes.addTweetPart}>
                     <TextareaAutosize aria-label="empty textarea" placeholder="What's happening?" />
                     <IconButton

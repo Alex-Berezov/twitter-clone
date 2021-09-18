@@ -9,10 +9,6 @@ export const createTweetFormStyles = makeStyles((theme) => ({
         display: 'flex',
         boxShadow: 'none',
     },
-    avatar: {
-        width: '2.5em',
-        height: '2.5em',
-    },
     addTweetPart: {
         display: 'flex',
         flexDirection: 'column',
