@@ -19,7 +19,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 import { useLeftSidebarStyles } from './LeftSidebarStyles';
 
-const LeftSidebar = () => {
+const LeftSidebar: React.FC = (): React.ReactElement => {
     const classes = useLeftSidebarStyles();
 
     return (
@@ -29,7 +29,7 @@ const LeftSidebar = () => {
                     <SmallBlueLogo className={classes.smallBlueLogo} color="primary" />
                 </NavLink>
                 <NavLink exact to="/" className={classes.listItem} activeClassName={classes.activeNavItem}>
-                    <ListItem button>
+                    <ListItem button className={classes.listItemInner}>
                         <ListItemIcon>
                             <HomeOutlinedIcon />
                         </ListItemIcon>
@@ -37,7 +37,7 @@ const LeftSidebar = () => {
                     </ListItem>
                 </NavLink>
                 <NavLink to="/explore" className={classes.listItem} activeClassName={classes.activeNavItem}>
-                    <ListItem button>
+                    <ListItem button className={classes.listItemInner}>
                         <ListItemIcon>
                             <SearchOutlinedIcon />
                         </ListItemIcon>
@@ -45,7 +45,7 @@ const LeftSidebar = () => {
                     </ListItem>
                 </NavLink>
                 <NavLink to="/notifications" className={classes.listItem} activeClassName={classes.activeNavItem}>
-                    <ListItem button>
+                    <ListItem button className={classes.listItemInner}>
                         <ListItemIcon>
                             <NotificationsNoneOutlinedIcon />
                         </ListItemIcon>
@@ -53,7 +53,7 @@ const LeftSidebar = () => {
                     </ListItem>
                 </NavLink>
                 <NavLink to="/messages" className={classes.listItem} activeClassName={classes.activeNavItem}>
-                    <ListItem button>
+                    <ListItem button className={classes.listItemInner}>
                         <ListItemIcon>
                             <MailOutlineIcon />
                         </ListItemIcon>
@@ -61,7 +61,7 @@ const LeftSidebar = () => {
                     </ListItem>
                 </NavLink>
                 <NavLink to="/bookmarks" className={classes.listItem} activeClassName={classes.activeNavItem}>
-                    <ListItem button>
+                    <ListItem button className={classes.listItemInner}>
                         <ListItemIcon>
                             <BookmarkBorderOutlinedIcon />
                         </ListItemIcon>
@@ -69,7 +69,7 @@ const LeftSidebar = () => {
                     </ListItem>
                 </NavLink>
                 <NavLink to="/lists" className={classes.listItem} activeClassName={classes.activeNavItem}>
-                    <ListItem button>
+                    <ListItem button className={classes.listItemInner}>
                         <ListItemIcon>
                             <ListAltOutlinedIcon />
                         </ListItemIcon>
@@ -77,7 +77,7 @@ const LeftSidebar = () => {
                     </ListItem>
                 </NavLink>
                 <NavLink to="/profile" className={classes.listItem} activeClassName={classes.activeNavItem}>
-                    <ListItem button>
+                    <ListItem button className={classes.listItemInner}>
                         <ListItemIcon>
                             <PersonOutlineOutlinedIcon />
                         </ListItemIcon>

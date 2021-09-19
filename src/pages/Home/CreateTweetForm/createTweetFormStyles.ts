@@ -24,6 +24,7 @@ export const createTweetFormStyles = makeStyles((theme) => ({
     accessToComments: {
         justifyContent: 'flex-start',
         alignItems: 'end',
+        width: 'fit-content',
         '& h6': {
             marginLeft: 10,
             marginBottom: 0,

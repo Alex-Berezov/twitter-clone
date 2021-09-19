@@ -8,6 +8,10 @@ export const singleTweetStyles = makeStyles(() => ({
     root: {
         borderBottom: '1px solid rgb(230 233 234)',
         padding: '5px 10px',
+        cursor: 'pointer',
+        '&:hover': {
+            background: grey[50],
+        },
     },
     singleTweetContent: {
         display: 'flex',
@@ -38,7 +42,7 @@ export const singleTweetStyles = makeStyles(() => ({
     publicationTime: {
         color: grey[500],
     },
-    singleTweetMessage: {
+    singleTweetText: {
         marginTop: 5,
     },
     singleTweetButtons: {

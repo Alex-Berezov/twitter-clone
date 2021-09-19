@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import grey from '@material-ui/core/colors/grey';
 
 export const useLeftSidebarStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +17,15 @@ export const useLeftSidebarStyles = makeStyles((theme) => ({
             width: '1.95rem',
             height: '1.95rem',
             color: 'black',
-        }
+        },
+    },
+    listItemInner: {
+        transition: 'none',
+        '&:hover': {
+            borderRadius: 90,
+            background: grey[100],
+            width: 'fit-content',
+        },
     },
     listItemText: {
         '& span': {

@@ -10,13 +10,22 @@ import TweetSmallBtn from '../../../components/Ui/TweetSmallBtn/TweetSmallBtn';
 import BasicAvatar from './../../../components/Ui/BasicAvatar/BasicAvatar';
 import { createTweetFormStyles } from './createTweetFormStyles';
 
-const CreateTweetForm = () => {
+interface CreateTweetFormProps {
+    user: {
+        accountName: string,
+        avatarUrl: string,
+    },
+};
+
+const CreateTweetForm: React.FC<CreateTweetFormProps> = (
+    { user }: CreateTweetFormProps
+    ): React.ReactElement => {
     const classes = createTweetFormStyles();
 
     return (
         <div className={classes.root}>
             <Paper component="form" className={classes.form}>
-                <BasicAvatar />
+                <BasicAvatar accountName={user.accountName} avatarUrl={user.avatarUrl} />
                 <div className={classes.addTweetPart}>
                     <TextareaAutosize aria-label="empty textarea" placeholder="What's happening?" />
                     <IconButton

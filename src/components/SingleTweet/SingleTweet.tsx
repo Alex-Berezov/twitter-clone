@@ -7,26 +7,37 @@ import RetweetIcon from '@material-ui/icons/Repeat';
 import LikeIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import ShareIcon from '@material-ui/icons/ShareOutlined';
 
-import BasicAvatar from '../../../components/Ui/BasicAvatar/BasicAvatar';
+import BasicAvatar from '../Ui/BasicAvatar/BasicAvatar';
 import { singleTweetStyles } from './singleTweetStyles';
 
-const SingleTweet = () => {
+interface SingleTweetProps {
+    user: {
+        accountName: string,
+        accountShortName: string,
+        avatarUrl: string,
+    },
+    text: string,
+};
+
+const SingleTweet: React.FC<SingleTweetProps> = (
+    { text, user }: SingleTweetProps
+    ): React.ReactElement => {
     const classes = singleTweetStyles();
 
     return (
         <div className={classes.root}>
             <Grid container spacing={2}>
                 <Grid item xs={1}>
-                    <BasicAvatar />
+                    <BasicAvatar accountName={user.accountName} avatarUrl={user.avatarUrl} />
                 </Grid>
                 <Grid item xs={11} className={classes.singleTweetContent}>
                     <div className={classes.singleTweetHeader}>
                         <div className={classes.accountInfo}>
                             <Typography variant="subtitle2" className={classes.accountName}>
-                                Account name
+                                {user.accountName}
                             </Typography>
                             <Typography variant="body2" className={classes.accountShortName}>
-                                @AccountName
+                                {user.accountShortName}
                             </Typography>
                             <FiberManualRecordIcon className={classes.separationDot} />
                             <Typography variant="body2" className={classes.publicationTime}>
@@ -34,10 +45,8 @@ const SingleTweet = () => {
                             </Typography>
                         </div>
                     </div>
-                    <Typography variant="body2" className={classes.singleTweetMessage}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quos, a id,
-                        ducimus quisquam modi numquam, doloremque sint rerum nam tenetur enim porro cum
-                        temporibus adipisci suscipit molestias qui provident?
+                    <Typography variant="body2" className={classes.singleTweetText}>
+                        {text}
                     </Typography>
                     <div className={classes.singleTweetButtons}>
                         <IconButton aria-label="reply icon" className={classes.replyIcon}>
