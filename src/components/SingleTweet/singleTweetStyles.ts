@@ -18,6 +18,7 @@ export const singleTweetStyles = makeStyles(() => ({
         flexDirection: 'column',
         width: '100%',
         padding: '1em !important',
+        paddingLeft: '25px !important',
     },
     singleTweetHeader: {
         display: 'flex',

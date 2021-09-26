@@ -23,17 +23,39 @@ const useStyles = makeStyles((theme: Theme) =>
     iconButton: {
         padding: 10,
     },
+    focusedRoot: {
+      marginTop: 5,
+      padding: '1px 3px',
+      display: 'flex',
+      alignItems: 'center',
+      borderRadius: 99,
+      boxShadow: 'none',
+      background: 'transporent',
+      border: '1px solid rgba(29,161,242)',
+    },
   }),
 );
 
-export const SearchTwitter = () => {
+export const SearchTwitter: React.FC = (): React.ReactElement => {
   const classes = useStyles();
+  const [focused, setFocused] = React.useState(false);
 
   return (
-    <Paper component="form" className={classes.root}>
-      <IconButton type="submit" className={classes.iconButton} aria-label="search">
-        <SearchIcon />
-      </IconButton>
+    <Paper
+      component="form"
+      className={focused ? classes.focusedRoot : classes.root}
+      onFocus={() => setFocused(!focused)}
+      onBlur={() => setFocused(!focused)}
+    >
+      {
+        focused
+          ? <IconButton type="submit" className={classes.iconButton} aria-label="search" color="primary">
+              <SearchIcon />
+            </IconButton>
+          : <IconButton type="submit" className={classes.iconButton} aria-label="search">
+              <SearchIcon />
+            </IconButton>
+      }
       <InputBase
         className={classes.input}
         placeholder="Search Twitter"

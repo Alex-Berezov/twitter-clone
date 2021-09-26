@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-function App() {
+const App: React.FC = (): React.ReactElement => {
   const classes = useStyles();
   const [isAuthorized, setIsAuthorized] = React.useState(true);
 
@@ -41,7 +41,7 @@ function App() {
                   <Grid item component="header" xs={3}>
                     <LeftSidebar />
                   </Grid>
-                  <Grid className={classes.contentPart} item xs={6}>
+                  <Grid className={classes.contentPart} item xs={5}>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/explore" component={Explore} />
                     <Route exact path="/notifications" component={Notifications} />
@@ -50,7 +50,7 @@ function App() {
                     <Route exact path="/lists" component={Lists} />
                     <Route exact path="/profile" component={Profile} />
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={4}>
                     <RightSidebar />
                   </Grid>
                 </Grid>

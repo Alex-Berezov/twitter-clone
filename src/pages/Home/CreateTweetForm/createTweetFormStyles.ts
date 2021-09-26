@@ -41,6 +41,18 @@ export const createTweetFormStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
+    smileIcon: {
+        paddingLeft: 0,
+    },
+    buttonBlockRightPart: {
+        display: 'flex',
+        alignItems: 'center',
+        '& .MuiCircularProgress-root': {
+            width: '20px !important',
+            height: '20px !important',
+            marginRight: 15,
+        },
+    },
     input: {
         display: 'none',
     },
