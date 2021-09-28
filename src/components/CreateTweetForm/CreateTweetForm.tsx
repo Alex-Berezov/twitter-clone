@@ -8,8 +8,8 @@ import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
 import PublicIcon from '@material-ui/icons/Public';
 import SmileIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
 
-import TweetSmallBtn from '../../../components/Ui/TweetSmallBtn/TweetSmallBtn';
-import BasicAvatar from './../../../components/Ui/BasicAvatar/BasicAvatar';
+import TweetSmallBtn from '../Ui/TweetSmallBtn/TweetSmallBtn';
+import BasicAvatar from '../Ui/BasicAvatar/BasicAvatar';
 import { createTweetFormStyles } from './createTweetFormStyles';
 
 interface CreateTweetFormProps {

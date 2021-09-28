@@ -3,6 +3,8 @@ import grey from '@material-ui/core/colors/grey';
 
 export const useLeftSidebarStyles = makeStyles((theme) => ({
     root: {
+        position: 'sticky',
+        top: 0,
         '& nav': {
             paddingTop: '0px',
         },

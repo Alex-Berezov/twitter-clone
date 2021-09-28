@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme: Theme) =>
     contentPart: {
       border: '1px solid rgb(230 233 234)',
     },
+    rightSidebarRoot: {
+      marginTop: 5,
+    },
   }),
 );
 
@@ -38,10 +41,10 @@ const App: React.FC = (): React.ReactElement => {
           isAuthorized
             ? <Container className={classes.container} maxWidth="lg">
                 <Grid container spacing={1}>
-                  <Grid item component="header" xs={3}>
+                  <Grid item component="header" sm={1} md={1} lg={3}>
                     <LeftSidebar />
                   </Grid>
-                  <Grid className={classes.contentPart} item xs={5}>
+                  <Grid className={classes.contentPart} item sm={7} md={7} lg={5}>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/explore" component={Explore} />
                     <Route exact path="/notifications" component={Notifications} />
@@ -50,7 +53,7 @@ const App: React.FC = (): React.ReactElement => {
                     <Route exact path="/lists" component={Lists} />
                     <Route exact path="/profile" component={Profile} />
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid className={classes.rightSidebarRoot} item xs={4}>
                     <RightSidebar />
                   </Grid>
                 </Grid>

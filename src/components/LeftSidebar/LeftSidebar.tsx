@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link, NavLink } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
-
+import Hidden from '@material-ui/core/Hidden';
 import SmallBlueLogo from '@material-ui/icons/Twitter';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
@@ -17,10 +16,19 @@ import ListAltOutlinedIcon from '@material-ui/icons/ListAltOutlined';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
+import CreateTweetModal from './CreateTweetModal/CreateTweetModal';
 import { useLeftSidebarStyles } from './LeftSidebarStyles';
 
 const LeftSidebar: React.FC = (): React.ReactElement => {
     const classes = useLeftSidebarStyles();
+
+    const [openModal, setOpenModal] = React.useState(false);
+    const handleOpen = () => {
+        setOpenModal(true);
+    };
+    const handleClose = () => {
+        setOpenModal(false);
+    };
 
     return (
         <div className={classes.root}>
@@ -33,7 +41,9 @@ const LeftSidebar: React.FC = (): React.ReactElement => {
                         <ListItemIcon>
                             <HomeOutlinedIcon />
                         </ListItemIcon>
-                        <ListItemText className={classes.listItemText} primary="Home" />
+                        <Hidden mdDown>
+                            <ListItemText className={classes.listItemText} primary="Home" />
+                        </Hidden>
                     </ListItem>
                 </NavLink>
                 <NavLink to="/explore" className={classes.listItem} activeClassName={classes.activeNavItem}>
@@ -41,7 +51,9 @@ const LeftSidebar: React.FC = (): React.ReactElement => {
                         <ListItemIcon>
                             <SearchOutlinedIcon />
                         </ListItemIcon>
-                        <ListItemText className={classes.listItemText} primary="Explore" />
+                        <Hidden mdDown>
+                            <ListItemText className={classes.listItemText} primary="Explore" />
+                        </Hidden>
                     </ListItem>
                 </NavLink>
                 <NavLink to="/notifications" className={classes.listItem} activeClassName={classes.activeNavItem}>
@@ -49,7 +61,9 @@ const LeftSidebar: React.FC = (): React.ReactElement => {
                         <ListItemIcon>
                             <NotificationsNoneOutlinedIcon />
                         </ListItemIcon>
-                        <ListItemText className={classes.listItemText} primary="Notifications" />
+                        <Hidden mdDown>
+                            <ListItemText className={classes.listItemText} primary="Notifications" />
+                        </Hidden>
                     </ListItem>
                 </NavLink>
                 <NavLink to="/messages" className={classes.listItem} activeClassName={classes.activeNavItem}>
@@ -57,7 +71,9 @@ const LeftSidebar: React.FC = (): React.ReactElement => {
                         <ListItemIcon>
                             <MailOutlineIcon />
                         </ListItemIcon>
-                        <ListItemText className={classes.listItemText} primary="Messages" />
+                        <Hidden mdDown>
+                            <ListItemText className={classes.listItemText} primary="Messages" />
+                        </Hidden>
                     </ListItem>
                 </NavLink>
                 <NavLink to="/bookmarks" className={classes.listItem} activeClassName={classes.activeNavItem}>
@@ -65,7 +81,9 @@ const LeftSidebar: React.FC = (): React.ReactElement => {
                         <ListItemIcon>
                             <BookmarkBorderOutlinedIcon />
                         </ListItemIcon>
-                        <ListItemText className={classes.listItemText} primary="Bookmarks" />
+                        <Hidden mdDown>
+                            <ListItemText className={classes.listItemText} primary="Bookmarks" />
+                        </Hidden>
                     </ListItem>
                 </NavLink>
                 <NavLink to="/lists" className={classes.listItem} activeClassName={classes.activeNavItem}>
@@ -73,7 +91,9 @@ const LeftSidebar: React.FC = (): React.ReactElement => {
                         <ListItemIcon>
                             <ListAltOutlinedIcon />
                         </ListItemIcon>
-                        <ListItemText className={classes.listItemText} primary="Lists" />
+                        <Hidden mdDown>
+                            <ListItemText className={classes.listItemText} primary="Lists" />
+                        </Hidden>
                     </ListItem>
                 </NavLink>
                 <NavLink to="/profile" className={classes.listItem} activeClassName={classes.activeNavItem}>
@@ -81,19 +101,31 @@ const LeftSidebar: React.FC = (): React.ReactElement => {
                         <ListItemIcon>
                             <PersonOutlineOutlinedIcon />
                         </ListItemIcon>
-                        <ListItemText className={classes.listItemText} primary="Profile" />
+                        <Hidden mdDown>
+                            <ListItemText className={classes.listItemText} primary="Profile" />
+                        </Hidden>
                     </ListItem>
                 </NavLink>
                 <ListItem className={classes.listItem} button disabled>
                     <ListItemIcon>
                         <MoreHorizIcon />
                     </ListItemIcon>
-                    <ListItemText className={classes.listItemText} primary="More" />
+                    <Hidden mdDown>
+                        <ListItemText className={classes.listItemText} primary="More" />
+                    </Hidden>
                 </ListItem>
             </List>
-            <Button className={classes.tweetBtn} variant="contained" color="primary">
-                Tweet
-            </Button>
+            <Hidden mdDown>
+                <Button
+                    className={classes.tweetBtn}
+                    variant="contained"
+                    color="primary"
+                    onClick={handleOpen}
+                >
+                    Tweet
+                </Button>
+            </Hidden>
+            <CreateTweetModal handleOpen={handleOpen} openModal={openModal} handleClose={handleClose} />
         </div>
     );
 };

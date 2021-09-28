@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Typography } from '@material-ui/core';
 
-import CreateTweetForm from './CreateTweetForm/CreateTweetForm';
+import CreateTweetForm from '../../components/CreateTweetForm/CreateTweetForm';
 import SingleTweet from '../../components/SingleTweet/SingleTweet';
 
 import { homeStyles } from './homeStyles';
@@ -26,6 +26,46 @@ export const Home: React.FC<HomeProps> = (): React.ReactElement => {
                     accountName: 'Account Name',
                     avatarUrl: '../../assets/images/lohp_1302x955.png',
                 }}
+            />
+            <SingleTweet
+                user={{
+                    accountName: 'Account Name',
+                    accountShortName: 'accountShortName',
+                    avatarUrl: '../../assets/images/lohp_1302x955.png',
+                }}
+                text={sampleText}
+            />
+            <SingleTweet
+                user={{
+                    accountName: 'Account Name',
+                    accountShortName: 'accountShortName',
+                    avatarUrl: '../../assets/images/lohp_1302x955.png',
+                }}
+                text={sampleText}
+            />
+            <SingleTweet
+                user={{
+                    accountName: 'Account Name',
+                    accountShortName: 'accountShortName',
+                    avatarUrl: '../../assets/images/lohp_1302x955.png',
+                }}
+                text={sampleText}
+            />
+            <SingleTweet
+                user={{
+                    accountName: 'Account Name',
+                    accountShortName: 'accountShortName',
+                    avatarUrl: '../../assets/images/lohp_1302x955.png',
+                }}
+                text={sampleText}
+            />
+            <SingleTweet
+                user={{
+                    accountName: 'Account Name',
+                    accountShortName: 'accountShortName',
+                    avatarUrl: '../../assets/images/lohp_1302x955.png',
+                }}
+                text={sampleText}
             />
             <SingleTweet
                 user={{
