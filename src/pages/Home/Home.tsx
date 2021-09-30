@@ -27,6 +27,7 @@ export const Home: React.FC<HomeProps> = (): React.ReactElement => {
                     avatarUrl: '../../assets/images/lohp_1302x955.png',
                 }}
             />
+            <hr className={classes.hr} />
             <SingleTweet
                 user={{
                     accountName: 'Account Name',

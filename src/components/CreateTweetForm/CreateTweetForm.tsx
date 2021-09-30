@@ -24,12 +24,27 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = (
     ): React.ReactElement => {
     const classes = createTweetFormStyles();
 
+    const [text, setText] = React.useState<string>('');
+    const textLimitPercent = Math.round((text.length / 280) * 100);
+    const maxLength = 280 - (text.length + 1);
+
+    const handleChangeTextarea = (e: React.FormEvent<HTMLTextAreaElement>) => {
+        if (e.currentTarget) {
+            setText(e.currentTarget.value);
+        }
+    }
+
     return (
         <div className={classes.root}>
             <Paper component="form" className={classes.form}>
                 <BasicAvatar accountName={user.accountName} avatarUrl={user.avatarUrl} />
                 <div className={classes.addTweetPart}>
-                    <TextareaAutosize aria-label="empty textarea" placeholder="What's happening?" />
+                    <TextareaAutosize
+                        aria-label="empty textarea"
+                        placeholder="What's happening?"
+                        onChange={handleChangeTextarea}
+                        value={text}
+                    />
                     <IconButton
                         className={classes.accessToComments}
                         color="primary"
@@ -55,7 +70,21 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = (
                             </IconButton>
                         </div>
                         <div className={classes.buttonBlockRightPart}>
-                            <CircularProgress variant="determinate" value={25} />
+                            {text && (
+                                    <>
+                                        {
+                                            textLimitPercent >= 100
+                                                ? <span className={classes.textRed}>{maxLength}</span>
+                                                : <span>{maxLength}</span>
+                                        }
+                                        <CircularProgress
+                                            variant="determinate"
+                                            value={textLimitPercent > 100 ? 100 : textLimitPercent}
+                                            style={textLimitPercent >= 100 ? {color: 'red'} : undefined}
+                                        />
+                                    </>
+                                )
+                            }
                             <TweetSmallBtn />
                         </div>
                     </div>

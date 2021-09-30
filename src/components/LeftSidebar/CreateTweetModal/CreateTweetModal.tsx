@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
+import CloseIcon from '@material-ui/icons/CloseOutlined';
 
 import CreateTweetForm from '../../CreateTweetForm/CreateTweetForm';
 
@@ -16,37 +17,44 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     paper: {
       backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
+      borderRadius: 20,
       boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
+      padding: '0 10px',
+      width: '30%',
     },
-    modalHeader: {},
+    modalHeader: {
+      borderBottom: '1px solid rgb(230 233 234)',
+      '& .MuiButtonBase-root': {
+        minWidth: 20,
+        borderRadius: 99,
+      },
+      '& .MuiButton-text': {
+        padding: 10,
+      },
+    },
+    closeIconBtn: {
+      
+    },
   }),
 );
 
 interface CreateTweetModalProps {
-    handleOpen: () => void,
     openModal: boolean,
     handleClose: () => void,
-    in?: boolean,
-    open?: boolean,
 }
 
 const CreateTweetModal: React.FC<CreateTweetModalProps> = ({
-    handleOpen, openModal, handleClose, open, in
+    openModal, handleClose
 }: CreateTweetModalProps): React.ReactElement => {
   const classes = useStyles();
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={open}
+        open={openModal}
         onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
@@ -54,10 +62,12 @@ const CreateTweetModal: React.FC<CreateTweetModalProps> = ({
           timeout: 500,
         }}
       >
-        <Fade in={open}>
+        <Fade in={openModal}>
           <div className={classes.paper}>
             <div className={classes.modalHeader}>
-                <Button>Default</Button>
+                <Button onClick={handleClose}>
+                  <CloseIcon className={classes.closeIconBtn} />
+                </Button>
             </div>
             <CreateTweetForm 
                 user={{

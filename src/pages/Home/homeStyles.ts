@@ -9,4 +9,9 @@ export const homeStyles = makeStyles((theme) => ({
             fontWeight: 700,
         },
     },
+    hr: {
+        widht: '100%',
+        height: 1,
+        border: '1px solid rgb(230 233 234)',
+    },
 }));

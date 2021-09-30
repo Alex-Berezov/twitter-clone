@@ -125,7 +125,7 @@ const LeftSidebar: React.FC = (): React.ReactElement => {
                     Tweet
                 </Button>
             </Hidden>
-            <CreateTweetModal handleOpen={handleOpen} openModal={openModal} handleClose={handleClose} />
+            <CreateTweetModal openModal={openModal} handleClose={handleClose} />
         </div>
     );
 };

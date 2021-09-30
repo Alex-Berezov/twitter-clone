@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const createTweetFormStyles = makeStyles((theme) => ({
     root: {
-        borderBottom: '1px solid rgb(230 233 234)',
         padding: '5px 10px',
     },
     form: {
@@ -52,6 +51,12 @@ export const createTweetFormStyles = makeStyles((theme) => ({
             height: '20px !important',
             marginRight: 15,
         },
+        '& span': {
+            marginRight: 5,
+        },
+    },
+    textRed: {
+        color: 'red',
     },
     input: {
         display: 'none',
