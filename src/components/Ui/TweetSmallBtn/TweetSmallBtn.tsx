@@ -11,14 +11,30 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function TweetSmallBtn() {
+interface TweetSmallBtnProps {
+  disabled: boolean,
+  addTweet: () => void,
+};
+
+const TweetSmallBtn: React.FC<TweetSmallBtnProps> = (
+  { disabled, addTweet }: TweetSmallBtnProps):
+  React.ReactElement => {
   const classes = useStyles();
 
   return (
     <div>
-        <Button variant="contained" size="large" color="primary" className={classes.margin}>
+        <Button
+          variant="contained"
+          size="large"
+          color="primary"
+          disabled={disabled}
+          className={classes.margin}
+          onClick={addTweet}
+        >
             Tweet
         </Button>
     </div>
   );
 }
+
+export default TweetSmallBtn;

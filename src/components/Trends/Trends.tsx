@@ -20,8 +20,6 @@ const Trends: React.FC = (): React.ReactElement => {
             <TrendingBlock />
             <TrendingBlock />
             <TrendingBlock />
-            <TrendingBlock />
-            <TrendingBlock />
         </div>
     );
 };

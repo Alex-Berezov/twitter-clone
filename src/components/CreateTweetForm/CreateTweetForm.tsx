@@ -19,6 +19,9 @@ interface CreateTweetFormProps {
     },
 };
 
+const MAX_LENGTH = 280;
+const MAX_ROWS = 10;
+
 const CreateTweetForm: React.FC<CreateTweetFormProps> = (
     { user }: CreateTweetFormProps
     ): React.ReactElement => {
@@ -26,12 +29,16 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = (
 
     const [text, setText] = React.useState<string>('');
     const textLimitPercent = Math.round((text.length / 280) * 100);
-    const maxLength = 280 - (text.length + 1);
+    const textCount = MAX_LENGTH - text.length;
 
-    const handleChangeTextarea = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    const handleChangeTextarea = (e: React.FormEvent<HTMLTextAreaElement>): void => {
         if (e.currentTarget) {
             setText(e.currentTarget.value);
         }
+    }
+
+    const handleClickAddTweet = (): void => {
+        setText('');
     }
 
     return (
@@ -44,6 +51,7 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = (
                         placeholder="What's happening?"
                         onChange={handleChangeTextarea}
                         value={text}
+                        maxRows={MAX_ROWS}
                     />
                     <IconButton
                         className={classes.accessToComments}
@@ -73,19 +81,22 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = (
                             {text && (
                                     <>
                                         {
-                                            textLimitPercent >= 100
-                                                ? <span className={classes.textRed}>{maxLength}</span>
-                                                : <span>{maxLength}</span>
+                                            text.length >= MAX_LENGTH
+                                                ? <span className={classes.textRed}>{textCount}</span>
+                                                : <span>{textCount}</span>
                                         }
                                         <CircularProgress
                                             variant="determinate"
-                                            value={textLimitPercent > 100 ? 100 : textLimitPercent}
-                                            style={textLimitPercent >= 100 ? {color: 'red'} : undefined}
+                                            value={text.length >= MAX_LENGTH ? 100 : textLimitPercent}
+                                            style={text.length >= MAX_LENGTH ? {color: 'red'} : undefined}
                                         />
                                     </>
                                 )
                             }
-                            <TweetSmallBtn />
+                            <TweetSmallBtn
+                                disabled={text.length >= MAX_LENGTH}
+                                addTweet={handleClickAddTweet}
+                            />
                         </div>
                     </div>
                 </div>
