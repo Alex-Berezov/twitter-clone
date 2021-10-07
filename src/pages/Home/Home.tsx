@@ -1,9 +1,12 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Typography } from '@material-ui/core';
 
 import CreateTweetForm from '../../components/CreateTweetForm/CreateTweetForm';
 import SingleTweet from '../../components/SingleTweet/SingleTweet';
+import { fetchTweets } from '../../store/ducks/tweets/actionCreators/actionCreators';
+import { selectTweetsItems } from '../../store/ducks/tweets/selectors';
 
 import { homeStyles } from './homeStyles';
 
@@ -15,6 +18,14 @@ interface HomeProps {
 
 export const Home: React.FC<HomeProps> = (): React.ReactElement => {
     const classes = homeStyles();
+    const dispatch = useDispatch();
+    const tweets = useSelector(selectTweetsItems);
+
+    React.useEffect(() => {
+        dispatch(fetchTweets());
+    }, []);
+
+    // console.log('tweets', tweets);
 
     return (
         <div className={classes.homePage}>
@@ -28,54 +39,15 @@ export const Home: React.FC<HomeProps> = (): React.ReactElement => {
                 }}
             />
             <hr className={classes.hr} />
-            <SingleTweet
-                user={{
-                    accountName: 'Account Name',
-                    accountShortName: 'accountShortName',
-                    avatarUrl: '../../assets/images/lohp_1302x955.png',
-                }}
-                text={sampleText}
-            />
-            <SingleTweet
-                user={{
-                    accountName: 'Account Name',
-                    accountShortName: 'accountShortName',
-                    avatarUrl: '../../assets/images/lohp_1302x955.png',
-                }}
-                text={sampleText}
-            />
-            <SingleTweet
-                user={{
-                    accountName: 'Account Name',
-                    accountShortName: 'accountShortName',
-                    avatarUrl: '../../assets/images/lohp_1302x955.png',
-                }}
-                text={sampleText}
-            />
-            <SingleTweet
-                user={{
-                    accountName: 'Account Name',
-                    accountShortName: 'accountShortName',
-                    avatarUrl: '../../assets/images/lohp_1302x955.png',
-                }}
-                text={sampleText}
-            />
-            <SingleTweet
-                user={{
-                    accountName: 'Account Name',
-                    accountShortName: 'accountShortName',
-                    avatarUrl: '../../assets/images/lohp_1302x955.png',
-                }}
-                text={sampleText}
-            />
-            <SingleTweet
-                user={{
-                    accountName: 'Account Name',
-                    accountShortName: 'accountShortName',
-                    avatarUrl: '../../assets/images/lohp_1302x955.png',
-                }}
-                text={sampleText}
-            />
+            {
+                tweets.map(tweet => {
+                    return <SingleTweet
+                        user={tweet.user}
+                        text={tweet.text}
+                        key={tweet.id}
+                    />
+                })
+            }
         </div>
     );
 };
