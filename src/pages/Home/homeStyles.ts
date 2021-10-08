@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export const homeStyles = makeStyles((theme) => ({
+export const homeStyles = makeStyles(() => ({
     homePage: {},
     title: {
         padding: '15px',
@@ -13,5 +13,9 @@ export const homeStyles = makeStyles((theme) => ({
         widht: '100%',
         height: 1,
         border: '1px solid rgb(230 233 234)',
+    },
+    preloader: {
+        textAlign: 'center',
+        marginTop: 100,
     },
 }));

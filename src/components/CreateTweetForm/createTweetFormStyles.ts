@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export const createTweetFormStyles = makeStyles((theme) => ({
+export const createTweetFormStyles = makeStyles(() => ({
     root: {
         padding: '5px 10px',
     },

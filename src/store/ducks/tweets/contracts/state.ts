@@ -6,7 +6,7 @@ export enum LoadingState {
 }
 
 export interface Tweet {
-    id: number,
+    _id: string,
     text: string,
     user: {
         accountName: string,

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects'
 import { TweetsAPI } from '../../../services/api/tweetsAPI';
 import { setTweetLoadingState, setTweets, TweetsActionsType } from './actionCreators/actionCreators';
