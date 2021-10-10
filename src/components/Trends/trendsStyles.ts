@@ -1,4 +1,4 @@
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 
 export const trendsStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -15,5 +15,9 @@ export const trendsStyles = makeStyles((theme: Theme) =>
       justifyContent: 'space-between',
       alignItems: 'center',
     },
+    preloader: {
+      textAlign: 'center',
+      marginTop: 100,
+    },
   }),
-);
+)

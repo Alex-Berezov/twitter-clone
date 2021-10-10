@@ -1,0 +1,110 @@
+{
+    "tweets": [{
+            "_id": "615ea84e0a707363741ff40b",
+            "text": "Nostrud esse ullamco irure id ut velit elit incididunt anim sunt nisi mollit mollit tempor. Nisi culpa fugiat ullamco esse cillum anim exercitation in duis laboris fugiat labore consectetur. Exercitation dolor laborum exercitation Lorem. Ea veniam excepteur exercitation magna sit tempor nisi laboris. Commodo ut pariatur proident proident commodo anim. Adipisicing tempor sit laboris sit esse minim eiusmod Lorem do.\r\n",
+            "user": {
+                "accountName": "Hughes Powell",
+                "accountShortName": "Phyllis",
+                "avatarUrl": "https://source.unsplash.com/random/100x100"
+            }
+        },
+        {
+            "_id": "615ea84e6fc8933018ad16c4",
+            "text": "Sunt excepteur amet adipisicing nisi sit commodo velit. Ad mollit proident officia irure irure velit ullamco ut. Qui proident est fugiat enim est. Esse ad proident aute esse consequat nostrud dolor. Irure in minim id ipsum duis officia labore eu excepteur id est cillum velit.\r\n",
+            "user": {
+                "accountName": "Marguerite Prince",
+                "accountShortName": "Dixon",
+                "avatarUrl": "https://source.unsplash.com/random/100x100"
+            }
+        },
+        {
+            "_id": "615ea84e79cfe473fb4cf329",
+            "text": "Ullamco qui et ullamco anim mollit nostrud sint. Lorem ullamco cupidatat cupidatat exercitation pariatur anim in nisi sunt pariatur ea occaecat labore. Eu do occaecat officia nisi laborum velit sunt aute nisi duis nostrud cillum. Cupidatat duis elit consequat nulla irure officia minim minim id commodo minim non proident elit. Ad adipisicing laborum aliquip elit culpa elit reprehenderit mollit.\r\n",
+            "user": {
+                "accountName": "Mitchell Miranda",
+                "accountShortName": "Rosalie",
+                "avatarUrl": "https://source.unsplash.com/random/100x100"
+            }
+        },
+        {
+            "_id": "615ea84e9853ac191514c4de",
+            "text": "Nostrud velit consequat ipsum mollit fugiat labore quis. Eiusmod exercitation consequat commodo excepteur laboris anim nisi consectetur incididunt aute. Aute et consectetur dolore est exercitation reprehenderit tempor duis mollit.\r\n",
+            "user": {
+                "accountName": "Marcy Finch",
+                "accountShortName": "Norton",
+                "avatarUrl": "https://source.unsplash.com/random/100x100"
+            }
+        },
+        {
+            "_id": "615ea84e5e69d3edd89fce19",
+            "text": "Mollit do excepteur ea laborum. Id enim ipsum ipsum in. Amet non elit dolore culpa amet eu veniam laboris voluptate non.\r\n",
+            "user": {
+                "accountName": "Brittney Sheppard",
+                "accountShortName": "Key",
+                "avatarUrl": "https://source.unsplash.com/random/100x100"
+            }
+        },
+        {
+            "_id": "615ea84e36857009c30b7ccc",
+            "text": "Irure amet eiusmod exercitation velit exercitation exercitation aute Lorem non ut incididunt culpa adipisicing fugiat. Ad commodo deserunt dolore non deserunt nulla nostrud adipisicing. Officia culpa pariatur laboris voluptate velit et Lorem minim eu culpa exercitation consectetur velit dolore. Dolore ea veniam adipisicing adipisicing. Irure ullamco irure excepteur commodo mollit dolore irure fugiat cillum elit veniam non consectetur adipisicing.\r\n",
+            "user": {
+                "accountName": "Buckner Hall",
+                "accountShortName": "Franklin",
+                "avatarUrl": "https://source.unsplash.com/random/100x100"
+            }
+        },
+        {
+            "_id": "615ea84edfc7b936421389b1",
+            "text": "Consectetur adipisicing occaecat ullamco occaecat. Veniam in anim officia ex mollit duis dolor tempor laborum. Qui enim id exercitation occaecat pariatur elit reprehenderit est ex excepteur sit aliqua. Laboris ea quis et ea sunt aliquip Lorem Lorem. Ad ipsum magna reprehenderit sunt aute. Minim veniam ipsum aliqua consequat dolore sint pariatur amet consectetur aliquip consequat adipisicing ullamco.\r\n",
+            "user": {
+                "accountName": "Rodriguez Robbins",
+                "accountShortName": "Jolene",
+                "avatarUrl": "https://source.unsplash.com/random/100x100"
+            }
+        },
+        {
+            "_id": "615ea84eea255399042c2279",
+            "text": "Ad officia ad adipisicing sunt ad incididunt. Do sunt excepteur esse cillum nisi exercitation. Dolor laborum commodo elit nulla dolore dolore amet esse incididunt non quis minim adipisicing. Cillum minim do in voluptate ea culpa aliqua qui anim voluptate sunt. Magna enim occaecat Lorem est exercitation minim cupidatat quis anim ipsum incididunt dolore cillum in. Pariatur voluptate proident dolor laboris. Laborum duis laboris veniam cupidatat consectetur ex nulla veniam Lorem ullamco laboris.\r\n",
+            "user": {
+                "accountName": "Dillard Duncan",
+                "accountShortName": "Perkins",
+                "avatarUrl": "https://source.unsplash.com/random/100x100"
+            }
+        }
+    ],
+    "trends": [{
+        "_id": "789",
+        "name": "#HandMade",
+        "tweetsCount": 555
+    }, {
+        "_id": "987",
+        "name": "#Someinteresting",
+        "tweetsCount": 462
+    }, {
+        "_id": "456",
+        "name": "#Rocetscience",
+        "tweetsCount": 1678
+    }],
+    "users": [{
+            "accountName": "Hughes Powell",
+            "accountShortName": "Phyllis",
+            "avatarUrl": "https://source.unsplash.com/random/100x100"
+        },
+        {
+            "accountName": "Marguerite Prince",
+            "accountShortName": "Dixon",
+            "avatarUrl": "https://source.unsplash.com/random/100x100"
+        },
+        {
+            "accountName": "Mitchell Miranda",
+            "accountShortName": "Rosalie",
+            "avatarUrl": "https://source.unsplash.com/random/100x100"
+        }
+    ],
+    "user": {
+        "_id": "613",
+        "accountName": "Alex Berezov",
+        "accountShortName": "aleber",
+        "avatarUrl": "https://sun9-69.userapi.com/impf/c628830/v628830482/ffb9/D-PIe0deSaA.jpg?size=1280x853&quality=96&sign=3d285770452f6da640c845507a329198&type=album"
+    }
+}
