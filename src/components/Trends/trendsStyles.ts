@@ -1,4 +1,5 @@
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
+import grey from '@material-ui/core/colors/grey'
 
 export const trendsStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -18,6 +19,27 @@ export const trendsStyles = makeStyles((theme: Theme) =>
     preloader: {
       textAlign: 'center',
       marginTop: 100,
+    },
+    trendingBlock: {
+      margin: '16px -15px 0 -15px',
+      padding: '0 15px',
+      display: 'flex',
+      flexDirection: 'column',
+      cursor: 'pointer',
+      textDecoration: 'none',
+      '&:hover': {
+        background: grey[200],
+      },
+    },
+    trendingBlockHeader: {
+      color: grey[500],
+    },
+    accountName: {
+      color: '#000000',
+      fontStyle: 'bold',
+    },
+    tweetsCount: {
+      color: grey[500],
     },
   }),
 )

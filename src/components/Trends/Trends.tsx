@@ -1,11 +1,11 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 import Typography from "@material-ui/core/Typography"
 import { CircularProgress } from "@material-ui/core"
 import SettingsIcon from "@material-ui/icons/SettingsOutlined"
 
-import TrendingBlock from "../TrendingBlock/TrendingBlock"
 import { fetchTrends } from "../../store/trends/actionCreators"
 import {
   selectTrendsItems,
@@ -36,11 +36,27 @@ const Trends: React.FC = (): React.ReactElement => {
       ) : (
         trends?.map((trend) => {
           return (
-            <TrendingBlock
-              name={trend.name}
-              tweetsCount={trend.tweetsCount}
+            <Link
+              to={`/home/search?q=${trend.name}`}
+              className={classes.trendingBlock}
               key={trend._id}
-            />
+            >
+              <div className={classes.trendingBlockHeader}>
+                <Typography variant="caption" display="block">
+                  Trending in your place
+                </Typography>
+              </div>
+              <div className={classes.accountName}>
+                <Typography variant="subtitle2" className={classes.accountName}>
+                  {trend.name}
+                </Typography>
+              </div>
+              <div className={classes.tweetsCount}>
+                <Typography variant="caption" display="block">
+                  {trend.tweetsCount} Tweets
+                </Typography>
+              </div>
+            </Link>
           )
         })
       )}
