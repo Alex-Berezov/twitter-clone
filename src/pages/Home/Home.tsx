@@ -1,4 +1,11 @@
 import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import {
+  selectIsTweetsLoading,
+  selectTweetsItems,
+} from "../../store/tweets/selectors"
+import { fetchTweets } from "../../store/tweets/actionCreators"
+
 import { Typography } from "@material-ui/core"
 
 import CreateTweetForm from "../../components/CreateTweetForm/CreateTweetForm"
@@ -11,6 +18,14 @@ interface HomeProps {
 
 export const Home: React.FC<HomeProps> = (): React.ReactElement => {
   const classes = homeStyles()
+
+  const dispatch = useDispatch()
+  const tweets = useSelector(selectTweetsItems)
+  const isLoading = useSelector(selectIsTweetsLoading)
+
+  React.useEffect(() => {
+    dispatch(fetchTweets())
+  }, [dispatch])
 
   return (
     <div className={classes.homePage}>
@@ -26,7 +41,7 @@ export const Home: React.FC<HomeProps> = (): React.ReactElement => {
         }}
       />
       <hr className={classes.hr} />
-      <SingleTweet />
+      <SingleTweet tweets={tweets} isLoading={isLoading} />
     </div>
   )
 }

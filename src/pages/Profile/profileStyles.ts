@@ -1,12 +1,12 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
 
-export const profileStyles = makeStyles((theme) => ({
-    profilePage: {},
-    title: {
-        padding: '15px',
-        borderBottom: '1px solid rgb(230 233 234)',
-        '& h2': {
-            fontWeight: 700,
-        },
+export const profileStyles = makeStyles(() => ({
+  profilePage: {},
+  title: {
+    padding: '15px',
+    borderBottom: '1px solid rgb(230 233 234)',
+    '& h2': {
+      fontWeight: 700,
     },
-}));
+  },
+}))

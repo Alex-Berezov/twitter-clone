@@ -1,6 +1,6 @@
-import { createTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles'
 
-export const theme = createTheme ({
+export const theme = createTheme({
   typography: {
     fontFamily: [
       '-apple-system',
@@ -22,14 +22,14 @@ export const theme = createTheme ({
       contrastText: '#fff',
     },
     secondary: {
-      main: 'rgba(26,145,218)',
+      main: 'rgb(247, 249, 249)',
     },
     error: {
       main: '#ff0000',
     },
     background: {
       default: '#fff',
-    }
+    },
   },
   spacing: [0, 4, 8, 16, 32, 64],
 })

@@ -9,6 +9,10 @@ export const singleTweetStyles = makeStyles(() => ({
     borderBottom: '1px solid rgb(230 233 234)',
     padding: '5px 10px',
     cursor: 'pointer',
+    '& a': {
+      textDecoration: 'none',
+      color: 'inherit',
+    },
     '&:hover': {
       background: grey[50],
     },
