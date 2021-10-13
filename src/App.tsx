@@ -1,5 +1,5 @@
 import React from "react"
-import { Route } from "react-router-dom"
+import { Route, useLocation } from "react-router-dom"
 
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
@@ -34,6 +34,11 @@ const useStyles = makeStyles((theme: Theme) =>
 const App: React.FC = (): React.ReactElement => {
   const classes = useStyles()
   const [isAuthorized, setIsAuthorized] = React.useState(true)
+
+  const { pathname } = useLocation()
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   return (
     <div className="App">

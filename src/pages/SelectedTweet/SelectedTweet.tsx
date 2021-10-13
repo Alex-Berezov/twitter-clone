@@ -4,7 +4,7 @@ import {
   selectIsTweetsLoading,
   selectTweetsItems,
 } from "../../store/tweets/selectors"
-import { useLocation } from "react-router"
+import { useHistory, useLocation } from "react-router"
 
 import { IconButton, Typography } from "@material-ui/core"
 import ArrowBackIcon from "@material-ui/icons/ArrowBack"
@@ -22,7 +22,17 @@ const SelectedTweet: React.FC = (): React.ReactElement => {
   const isLoading = useSelector(selectIsTweetsLoading)
 
   let location = useLocation()
-  console.log("location: ", location.pathname)
+  const selectedId = location.pathname.slice(7)
+  const filteredTweets = tweets.filter((elem) => {
+    if (elem._id === selectedId) {
+      return elem
+    }
+  })
+
+  const history = useHistory()
+  const goBackButton = () => {
+    history.goBack()
+  }
 
   React.useEffect(() => {
     dispatch(fetchTweets())
@@ -31,14 +41,14 @@ const SelectedTweet: React.FC = (): React.ReactElement => {
   return (
     <div className={classes.selectedTweet}>
       <div className={classes.header}>
-        <IconButton color="secondary" component="button">
-          <ArrowBackIcon />
+        <IconButton component="button" onClick={goBackButton}>
+          <ArrowBackIcon className={classes.arrowBack} />
         </IconButton>
         <Typography variant="h6" component="h2">
           Tweet
         </Typography>
       </div>
-      <SingleTweet tweets={tweets} isLoading={isLoading} />
+      <SingleTweet tweets={filteredTweets} isLoading={isLoading} />
     </div>
   )
 }

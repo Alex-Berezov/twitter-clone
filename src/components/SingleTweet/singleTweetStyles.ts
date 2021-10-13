@@ -7,7 +7,7 @@ import pink from '@material-ui/core/colors/pink'
 export const singleTweetStyles = makeStyles(() => ({
   root: {
     borderBottom: '1px solid rgb(230 233 234)',
-    padding: '5px 10px',
+    padding: 10,
     cursor: 'pointer',
     '& a': {
       textDecoration: 'none',
@@ -21,7 +21,6 @@ export const singleTweetStyles = makeStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    padding: '1em !important',
     paddingLeft: '25px !important',
   },
   singleTweetHeader: {
