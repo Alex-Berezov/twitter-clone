@@ -35,7 +35,7 @@ const SingleTweet: React.FC<SingleTweetProps> = ({
         tweets.map((tweet) => {
           return (
             <Link to={`/tweet/${tweet._id}`} key={tweet._id}>
-              <Grid container spacing={2}>
+              <Grid container spacing={2} className={classes.singleTweet}>
                 <Grid item xs={1}>
                   <BasicAvatar
                     accountName={tweet.user.accountName}

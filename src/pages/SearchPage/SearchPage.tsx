@@ -10,18 +10,20 @@ import { IconButton, Typography } from "@material-ui/core"
 import ArrowBackIcon from "@material-ui/icons/ArrowBack"
 
 import SingleTweet from "../../components/SingleTweet/SingleTweet"
+import { SearchTwitter } from "../../components/SearchTwitter/SearchTwitter"
 import { fetchTweets } from "../../store/tweets/actionCreators"
 
-import { selectedTweetStyles } from "./selectedTweetStyles"
+import { searchPageStyles } from "./searchPageStyles"
 
-const SelectedTweet: React.FC = (): React.ReactElement => {
-  const classes = selectedTweetStyles()
+const SearchPage: React.FC = (): React.ReactElement => {
+  const classes = searchPageStyles()
 
   const dispatch = useDispatch()
   const tweets = useSelector(selectTweetsItems)
   const isLoading = useSelector(selectIsTweetsLoading)
 
   let location = useLocation()
+  console.log("location: ", location)
   const selectedId = location.pathname.slice(7)
   const filteredTweets = tweets.filter((elem) => {
     return elem._id === selectedId ? elem : null
@@ -37,18 +39,16 @@ const SelectedTweet: React.FC = (): React.ReactElement => {
   }, [dispatch])
 
   return (
-    <div className={classes.selectedTweet}>
+    <div className={classes.searchPage}>
       <div className={classes.header}>
         <IconButton component="button" onClick={goBackButton}>
           <ArrowBackIcon className={classes.arrowBack} />
         </IconButton>
-        <Typography variant="h6" component="h2">
-          Tweet
-        </Typography>
+        <SearchTwitter value={location.hash} />
       </div>
       <SingleTweet tweets={filteredTweets} isLoading={isLoading} />
     </div>
   )
 }
 
-export default SelectedTweet
+export default SearchPage

@@ -16,6 +16,7 @@ import { Bookmarks } from "./pages/Bookmarks/Bookmarks"
 import { Lists } from "./pages/Lists/Lists"
 import { Profile } from "./pages/Profile/Profile"
 import SelectedTweet from "./pages/SelectedTweet/SelectedTweet"
+import SearchPage from "./pages/SearchPage/SearchPage"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -58,6 +59,7 @@ const App: React.FC = (): React.ReactElement => {
                 <Route exact path="/lists" component={Lists} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/tweet/:id" component={SelectedTweet} />
+                <Route path="/search:q?" component={SearchPage} />
               </Grid>
               <Grid className={classes.rightSidebarRoot} item xs={4}>
                 <RightSidebar />

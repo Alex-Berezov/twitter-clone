@@ -13,6 +13,10 @@ export const singleTweetStyles = makeStyles(() => ({
       textDecoration: 'none',
       color: 'inherit',
     },
+  },
+  singleTweet: {
+    marginBottom: 20,
+    borderBottom: '1px solid #e6e6e6',
     '&:hover': {
       background: grey[50],
     },

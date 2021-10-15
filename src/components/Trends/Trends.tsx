@@ -37,7 +37,7 @@ const Trends: React.FC = (): React.ReactElement => {
         trends?.map((trend) => {
           return (
             <Link
-              to={`/home/search?q=${trend.name}`}
+              to={{ pathname: "/search", hash: `${trend.name}` }}
               className={classes.trendingBlock}
               key={trend._id}
             >
