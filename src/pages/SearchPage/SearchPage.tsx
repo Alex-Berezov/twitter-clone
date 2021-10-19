@@ -6,7 +6,7 @@ import {
 } from "../../store/tweets/selectors"
 import { useHistory, useLocation } from "react-router"
 
-import { IconButton, Typography } from "@material-ui/core"
+import { IconButton } from "@material-ui/core"
 import ArrowBackIcon from "@material-ui/icons/ArrowBack"
 
 import SingleTweet from "../../components/SingleTweet/SingleTweet"
@@ -23,7 +23,6 @@ const SearchPage: React.FC = (): React.ReactElement => {
   const isLoading = useSelector(selectIsTweetsLoading)
 
   let location = useLocation()
-  console.log("location: ", location)
   const selectedId = location.pathname.slice(7)
   const filteredTweets = tweets.filter((elem) => {
     return elem._id === selectedId ? elem : null

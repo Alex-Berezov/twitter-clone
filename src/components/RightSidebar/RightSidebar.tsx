@@ -1,21 +1,23 @@
-import React from 'react';
+import React from "react"
+import { useLocation } from "react-router"
 
-import { SearchTwitter } from '../SearchTwitter/SearchTwitter';
-import Trends from '../Trends/Trends';
-import WhoToFollow from '../WhoToFollow/WhoToFollow';
+import { SearchTwitter } from "../SearchTwitter/SearchTwitter"
+import Trends from "../Trends/Trends"
+import WhoToFollow from "../WhoToFollow/WhoToFollow"
 
-import { useRightSidebarStyles } from './rightSidebarStyles';
+import { useRightSidebarStyles } from "./rightSidebarStyles"
 
 const RightSidebar: React.FC = (): React.ReactElement => {
-    const classes = useRightSidebarStyles();
+  const classes = useRightSidebarStyles()
+  let location = useLocation()
 
-    return (
-        <div className={classes.root}>
-            <SearchTwitter />
-            <Trends />
-            <WhoToFollow />
-        </div>
-    );
-};
+  return (
+    <div className={classes.root}>
+      {location.pathname === "/search" ? null : <SearchTwitter />}
+      <Trends />
+      <WhoToFollow />
+    </div>
+  )
+}
 
-export default RightSidebar;
+export default RightSidebar
