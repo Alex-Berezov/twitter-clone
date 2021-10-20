@@ -117,7 +117,7 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = ({
                 </>
               )}
               <TweetSmallBtn
-                disabled={text.length >= MAX_LENGTH}
+                disabled={!text || text.length >= MAX_LENGTH}
                 addTweet={handleClickAddTweet}
               />
             </div>
