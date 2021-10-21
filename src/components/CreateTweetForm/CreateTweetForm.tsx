@@ -1,5 +1,5 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 import { Paper, TextareaAutosize } from "@material-ui/core"
 import Typography from "@material-ui/core/Typography"
@@ -13,6 +13,7 @@ import TweetSmallBtn from "../Ui/TweetSmallBtn/TweetSmallBtn"
 import BasicAvatar from "../Ui/BasicAvatar/BasicAvatar"
 import { fetchAddTweet } from "../../store/tweets/actionCreators"
 import { createTweetFormStyles } from "./createTweetFormStyles"
+import { selectAddFormState } from "../../store/tweets/selectors"
 
 interface CreateTweetFormProps {
   user: {
@@ -30,9 +31,12 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = ({
   const classes = createTweetFormStyles()
 
   const dispatch = useDispatch()
+  const addFormState = useSelector(selectAddFormState)
   const [text, setText] = React.useState<string>("")
   const textLimitPercent = Math.round((text.length / 280) * 100)
   const textCount = MAX_LENGTH - text.length
+
+  React.useEffect(() => {}, [addFormState])
 
   const handleChangeTextarea = (
     e: React.FormEvent<HTMLTextAreaElement>
