@@ -12,8 +12,11 @@ import SmileIcon from "@material-ui/icons/SentimentSatisfiedOutlined"
 import TweetSmallBtn from "../Ui/TweetSmallBtn/TweetSmallBtn"
 import BasicAvatar from "../Ui/BasicAvatar/BasicAvatar"
 import { fetchAddTweet } from "../../store/tweets/actionCreators"
-import { createTweetFormStyles } from "./createTweetFormStyles"
+import AddTweetFormNotif from "./../Notifications/AddTweetFormNotif/AddTweetFormNotif"
 import { selectAddFormState } from "../../store/tweets/selectors"
+
+import { createTweetFormStyles } from "./createTweetFormStyles"
+import { AddFormState } from "../../store/tweets/contracts/state"
 
 interface CreateTweetFormProps {
   user: {
@@ -33,10 +36,15 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = ({
   const dispatch = useDispatch()
   const addFormState = useSelector(selectAddFormState)
   const [text, setText] = React.useState<string>("")
+  const [visibleNotif, setVisibleNotif] = React.useState<boolean>(false)
   const textLimitPercent = Math.round((text.length / 280) * 100)
   const textCount = MAX_LENGTH - text.length
 
-  React.useEffect(() => {}, [addFormState])
+  React.useEffect(() => {
+    if (addFormState === AddFormState.ERROR) {
+      setVisibleNotif(true)
+    }
+  }, [addFormState])
 
   const handleChangeTextarea = (
     e: React.FormEvent<HTMLTextAreaElement>
@@ -53,6 +61,10 @@ const CreateTweetForm: React.FC<CreateTweetFormProps> = ({
 
   return (
     <div className={classes.root}>
+      <AddTweetFormNotif
+        visibleNotif={visibleNotif}
+        setVisibleNotif={setVisibleNotif}
+      />
       <Paper component="form" className={classes.form}>
         <BasicAvatar
           accountName={user.accountName}

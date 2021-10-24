@@ -30,6 +30,10 @@ export const tweetsReducer = produce(
         draft.AddFormState = AddFormState.LOADING
         break
 
+      case TweetsActionsType.SET_ADD_FORM_STATE:
+        draft.AddFormState = action.payload
+        break
+
       case TweetsActionsType.ADD_TWEET:
         draft.items.push(action.payload)
         // TODO: Подумать, какой статус создать, если твит был добавлен
