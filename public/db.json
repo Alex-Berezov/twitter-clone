@@ -59,6 +59,36 @@
         "avatarUrl": "https://source.unsplash.com/random/100x100?5"
       },
       "id": 6
+    },
+    {
+      "_id": "iykgioqmrh",
+      "text": "Some tweet",
+      "user": {
+        "accountName": "Test user",
+        "accountShortName": "test",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+      },
+      "id": 7
+    },
+    {
+      "_id": "dttw8tte46j",
+      "text": "sadadasd123",
+      "user": {
+        "accountName": "Test user",
+        "accountShortName": "test",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+      },
+      "id": 8
+    },
+    {
+      "_id": "vraylmv3pu",
+      "text": "Some new tweet",
+      "user": {
+        "accountName": "Test user",
+        "accountShortName": "test",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+      },
+      "id": 9
     }
   ],
   "trends": [
